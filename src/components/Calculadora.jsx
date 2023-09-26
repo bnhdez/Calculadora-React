@@ -13,7 +13,8 @@ class Calculadora extends React.Component{
         return <div>
             <Pantalla>{this.state.num1}</Pantalla>
             <div className="row">
-                <Boton>0</Boton>
+                <Boton col={9}>CE</Boton>
+                <Boton>{"<"}</Boton>
             </div>
         </div>
     }

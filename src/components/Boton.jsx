@@ -7,8 +7,8 @@ class Boton extends React.Component{
     }
 
     render(){
-        return <button>
-
+        return <button className="btn btn-secondary">
+            {this.props.children}
         </button>
     }
 

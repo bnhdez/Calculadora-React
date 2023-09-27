@@ -29,8 +29,9 @@ class Calculadora extends React.Component{
         this.setState({resultado: (nuevoValor === "" ? "0" : nuevoValor)})
     }
 
-    presionoOperador(){
-
+    presionoOperador(operador){
+        this.setState({op: operador, num1: Number(this.state.resultado)})
+        this.setState({resultado: "0"})
     }
 
     render(){

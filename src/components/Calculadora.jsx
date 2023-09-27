@@ -9,6 +9,10 @@ class Calculadora extends React.Component{
         this.state = {resultado: "0", op: "", num1: 0, num2: undefined}
     }
 
+    limpiar(){
+        this.setState({resultado: "0", op: "", num1: 0, num2: undefined})
+    }
+
     agregarNumero(num){
         if(this.state.resultado === "0"){
             this.setState({resultado: num + ""})
@@ -69,7 +73,7 @@ class Calculadora extends React.Component{
         return <div>
             <Pantalla>{this.state.resultado}</Pantalla>
             <div className="row">
-                <Boton col={9}>CE</Boton>
+                <Boton col={9} evento={() => this.limpiar()}>CE</Boton>
                 <Boton evento={() => this.backspace()}>{"<"}</Boton>
                 <Boton evento={() => this.agregarNumero(7)}>7</Boton>
                 <Boton evento={() => this.agregarNumero(8)}>8</Boton>

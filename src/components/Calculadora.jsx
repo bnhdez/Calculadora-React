@@ -17,6 +17,12 @@ class Calculadora extends React.Component{
         }
     }
 
+    agregarPunto(){
+        if(this.state.num1.indexOf(".") === -1){
+            this.setState({num1: this.state.num1 + "."})
+        }
+    }
+
     render(){
         return <div>
             <Pantalla>{this.state.num1}</Pantalla>
@@ -36,7 +42,7 @@ class Calculadora extends React.Component{
                 <Boton evento={() => this.agregarNumero(3)}>3</Boton>
                 <Boton>-</Boton>
                 <Boton evento={() => this.agregarNumero(0)}>0</Boton>
-                <Boton>.</Boton>
+                <Boton evento={() => this.agregarPunto()}>.</Boton>
                 <Boton>=</Boton>
                 <Boton>+</Boton>
             </div>

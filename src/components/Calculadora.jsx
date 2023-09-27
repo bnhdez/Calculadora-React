@@ -6,14 +6,14 @@ class Calculadora extends React.Component{
 
     constructor(props){
         super(props)
-        this.state = {num1: 0}
+        this.state = {num1: "0"}
     }
 
     agregarNumero(num){
-        if(this.state.num1 === 0){
-            this.setState({num1: num})
+        if(this.state.num1 === "0"){
+            this.setState({num1: num + ""})
         }else{
-            this.setState({num1: Number("" + this.state.num1 + num)})
+            this.setState({num1: "" + this.state.num1 + num})
         }
     }
 

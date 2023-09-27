@@ -35,7 +35,34 @@ class Calculadora extends React.Component{
     }
 
     operar(){
+        let num2
+        if(this.state.resultado !== (this.state.num1 + "")){
+            num2 = Number(this.state.resultado)
+            this.setState({num2: Number(this.state.resultado)})
+        }
 
+        if(num2 === undefined){
+            num2 = this.state.num2
+        }
+
+        switch(this.state.op){
+            case "+":
+                this.state.num1 = this.state.num1 + num2
+            break
+            case "-":
+                this.state.num1 = this.state.num1 - num2
+            break
+            case "*":
+                this.state.num1 = this.state.num1 * num2
+            break
+            case "/":
+                this.state.num1 = this.state.num1 / num2
+            break
+        }
+
+        if(this.state.op !== ""){
+            this.setState({resultado: this.state.num1 + ""})
+        }
     }
 
     render(){

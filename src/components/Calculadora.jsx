@@ -6,27 +6,27 @@ class Calculadora extends React.Component{
 
     constructor(props){
         super(props)
-        this.state = {num1: "0", op: ""}
+        this.state = {resultado: "0", op: "", num1: 0}
     }
 
     agregarNumero(num){
-        if(this.state.num1 === "0"){
-            this.setState({num1: num + ""})
+        if(this.state.resultado === "0"){
+            this.setState({resultado: num + ""})
         }else{
-            this.setState({num1: "" + this.state.num1 + num})
+            this.setState({resultado: "" + this.state.resultado + num})
         }
     }
 
     agregarPunto(){
-        if(this.state.num1.indexOf(".") === -1){
-            this.setState({num1: this.state.num1 + "."})
+        if(this.state.resultado.indexOf(".") === -1){
+            this.setState({resultado: this.state.resultado + "."})
         }
     }
 
     backspace(){
-        let nuevoValor = this.state.num1.substring(0, this.state.num1.length - 1)
+        let nuevoValor = this.state.resultado.substring(0, this.state.resultado.length - 1)
 
-        this.setState({num1: (nuevoValor === "" ? "0" : nuevoValor)})
+        this.setState({resultado: (nuevoValor === "" ? "0" : nuevoValor)})
     }
 
     presionoOperador(){
@@ -35,7 +35,7 @@ class Calculadora extends React.Component{
 
     render(){
         return <div>
-            <Pantalla>{this.state.num1}</Pantalla>
+            <Pantalla>{this.state.resultado}</Pantalla>
             <div className="row">
                 <Boton col={9}>CE</Boton>
                 <Boton evento={() => this.backspace()}>{"<"}</Boton>

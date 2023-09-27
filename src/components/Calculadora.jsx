@@ -23,12 +23,18 @@ class Calculadora extends React.Component{
         }
     }
 
+    backspace(){
+        let nuevoValor = this.state.num1.substring(0, this.state.num1.length - 1)
+
+        this.setState({num1: (nuevoValor === "" ? "0" : nuevoValor)})
+    }
+
     render(){
         return <div>
             <Pantalla>{this.state.num1}</Pantalla>
             <div className="row">
                 <Boton col={9}>CE</Boton>
-                <Boton>{"<"}</Boton>
+                <Boton evento={() => this.backspace()}>{"<"}</Boton>
                 <Boton evento={() => this.agregarNumero(7)}>7</Boton>
                 <Boton evento={() => this.agregarNumero(8)}>8</Boton>
                 <Boton evento={() => this.agregarNumero(9)}>9</Boton>

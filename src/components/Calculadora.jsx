@@ -89,6 +89,7 @@ class Calculadora extends React.Component{
         return <div className="container">
             <div className="row justify-content-center pt-4">
                 <div className="col-md-6">
+                    <h1 className="text-center">CALCULADORA</h1>
                     <Pantalla>{this.state.resultado}</Pantalla>
                     <div className="row">
                         <Boton color="danger" col={9} evento={() => this.limpiar()}>CE</Boton>

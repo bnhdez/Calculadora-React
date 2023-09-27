@@ -8,7 +8,7 @@ class Boton extends React.Component{
     }
 
     render(){
-        return <button onClick={this.props.evento} className={"btn btn-secondary col-" + (this.props.col === undefined ? "3" : this.props.col)}>
+        return <button onClick={this.props.evento} className={`btn btn-${(this.props.color === undefined ? "secondary" : this.props.color)} col-${(this.props.col === undefined ? "3" : this.props.col) }`}>
             {this.props.children}
         </button>
     }

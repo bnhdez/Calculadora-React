@@ -9,6 +9,12 @@ class Calculadora extends React.Component{
         this.state = {num1: 0}
     }
 
+    agregarNumero(num){
+        if(this.state.num1 === 0){
+            this.setState({num1: num})
+        }
+    }
+
     render(){
         return <div>
             <Pantalla>{this.state.num1}</Pantalla>

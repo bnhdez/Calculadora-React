@@ -6,7 +6,7 @@ class Calculadora extends React.Component{
 
     constructor(props){
         super(props)
-        this.state = {num1: "0"}
+        this.state = {num1: "0", op: ""}
     }
 
     agregarNumero(num){
@@ -29,6 +29,10 @@ class Calculadora extends React.Component{
         this.setState({num1: (nuevoValor === "" ? "0" : nuevoValor)})
     }
 
+    presionoOperador(){
+
+    }
+
     render(){
         return <div>
             <Pantalla>{this.state.num1}</Pantalla>
@@ -38,19 +42,19 @@ class Calculadora extends React.Component{
                 <Boton evento={() => this.agregarNumero(7)}>7</Boton>
                 <Boton evento={() => this.agregarNumero(8)}>8</Boton>
                 <Boton evento={() => this.agregarNumero(9)}>9</Boton>
-                <Boton>/</Boton>
+                <Boton evento={() => this.presionoOperador("/")}>/</Boton>
                 <Boton evento={() => this.agregarNumero(4)}>4</Boton>
                 <Boton evento={() => this.agregarNumero(5)}>5</Boton>
                 <Boton evento={() => this.agregarNumero(6)}>6</Boton>
-                <Boton>*</Boton>
+                <Boton evento={() => this.presionoOperador("*")}>*</Boton>
                 <Boton evento={() => this.agregarNumero(1)}>1</Boton>
                 <Boton evento={() => this.agregarNumero(2)}>2</Boton>
                 <Boton evento={() => this.agregarNumero(3)}>3</Boton>
-                <Boton>-</Boton>
+                <Boton evento={() => this.presionoOperador("-")}>-</Boton>
                 <Boton evento={() => this.agregarNumero(0)}>0</Boton>
                 <Boton evento={() => this.agregarPunto()}>.</Boton>
                 <Boton>=</Boton>
-                <Boton>+</Boton>
+                <Boton evento={() => this.presionoOperador("+")}>+</Boton>
             </div>
         </div>
     }

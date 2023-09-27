@@ -7,7 +7,7 @@ class Pantalla extends React.Component{
     }
 
     render(){
-        return <div>
+        return <div className="mb-2">
             <input type="text" className="form-control" value={this.props.children} readOnly disabled/>
         </div>
     }
